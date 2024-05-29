@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories</title>
+    <style>
+    .flex-container{
+        display:flex;
+        flex-wrap: wrap;
+
+        }
+    .flex-child
+    {
+        flex-basis:600px;
+        font-size: 2em !important;
+    }
+   
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #1f1f1f;
+        color: #d9d9d9;
+      }
+      h1 {
+        font-size: 36px;
+        font-weight: bold;
+        color: #ff5f5f;
+        margin-bottom: 20px;
+      }
+      .card {
+        background: #2f2f2f;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        margin: 20px 0;
+        padding: 20px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .field {
+        margin: 10px 0;
+      }
+      .field span {
+        display: block;
+        margin-top: 5px;
+        color: #d9d9d9;
+        font-size: 20px;
+      }
+      a {
+        color: #ff69b4;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #ff1493;
+      }
+      a:visited {
+        color: #ff69b4; /* Ensure visited links keep the same color */
+      }
+      .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        max-width: 400px;
+        margin: 20px auto;
+      }
+      .nav-buttons button {
+        background-color: #ff69b4;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+      .nav-buttons button:disabled {
+        background-color: #8c8c8c;
+      }
+      .nav-buttons button:hover {
+        background-color: #ff1493;
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .pagination button {
+        background-color: #ff69b4;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 0 5px;
+        transition: background-color 0.3s ease;
+      }
+      .pagination button:disabled {
+        background-color: #8c8c8c;
+      }
+      .pagination button:hover:not(:disabled) {
+        background-color: #ff1493;
+      }
+    </style>
+  </head>
+  <body>
+  
+
+    <h1>Categories</h1>
+    <div class="flex-container">
+      
+        {% for category in categories %}
+        {% if loop.index > 19 %}
+      <div class="flex-child">
+        <a href="{{ url_for('category_view', category=category) }}"
+          >{{ category }}</a
+        >
+    </div>
+    {% endif %}
+      {% endfor %}
+    <div>
+  </body>
+</html>
