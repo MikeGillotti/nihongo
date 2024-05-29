@@ -2,3 +2,4 @@ Flask==3.0.3
 pandas==1.5.1
 pykakasi==2.2.1
 SudachiPy==0.6.8
+gunicorn==22.0.0
