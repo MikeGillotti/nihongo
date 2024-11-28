@@ -5,4 +5,5 @@ The purpose of the tool is to reinforce vocabulary learning by consistently expo
 
 ## Demo
 (May take a few seconds to fully load)
+
 https://nihongo-2bhb.onrender.com/
